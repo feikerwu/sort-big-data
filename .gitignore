@@ -4,3 +4,4 @@ yarn.lock
 .cache/
 /src/big-data
 /src/splited/**
+/src/out
