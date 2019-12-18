@@ -8,4 +8,4 @@ const data: Array<number> = Array.from({ length: DATA_SIZE }).map(_ =>
   Math.floor(Math.random() * DATA_RANGE)
 );
 
-fs.writeFile(path.resolve(__dirname, 'big-data'), data.join(' '), () => {});
+fs.writeFile(path.resolve(__dirname, 'big-data'), data.join('\n'), () => {});

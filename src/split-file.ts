@@ -13,8 +13,15 @@ const readStream = fs.createReadStream(resolve('big-data'), {
 let count = 0;
 
 readStream.on('data', chuck => {
-  fs.writeFile(resolve(`${splitedDir}/${count++}`), chuck, err =>
-    console.error(err)
+  let sortedData = chuck
+    .toString()
+    .split('\n')
+    .sort((a, b) => a - b);
+
+  fs.writeFile(
+    resolve(`${splitedDir}/${count++}`),
+    sortedData.join('\n'),
+    err => console.error(err)
   );
 });
 
